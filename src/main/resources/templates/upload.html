@@ -18,40 +18,43 @@
 		<div class="container align-items-center width250 center-form">
 
 			<div class="form-group">
-				<label for="brokerConnection">Connection string to the
-					broker:</label> <input type="text" id="brokerConnection"
+				<label for="brokerConnection" th:text="#{broker.connection.label}"></label>
+				<input type="text" id="brokerConnection"
 					class="form-control mx-sm-3" name="brokerConnection"
 					th:value="${orderInformation.brokerConnection}">
 			</div>
 
 			<div class="form-group">
-				<label for="brokerUsername">Username for the broker:</label> <input
-					type="text" id="brokerUsername" class="form-control"
+				<label for="brokerUsername" th:text="#{broker.username.label}"></label>
+				<input type="text" id="brokerUsername" class="form-control"
 					name="brokerUsername" th:value="${orderInformation.brokerUsername}">
 			</div>
 
 			<div class="form-group">
-				<label for="brokerPassword">Password for the broker:</label> <input
-					id="brokerPassword" type="password" class="form-control"
+				<label for="brokerPassword" th:text="#{broker.password.label}"></label>
+				<input id="brokerPassword" type="password" class="form-control"
 					name="brokerPassword" th:value="${orderInformation.brokerPassword}">
 			</div>
 
 			<div class="form-group">
-				<label for="brokerDestination">Destination name for the
-					broker:</label> <input type="text" name="brokerDestination"
-					class="form-control"
+				<label for="brokerDestination" th:text="#{broker.destination.label}"></label>
+				<input type="text" name="brokerDestination" class="form-control"
 					th:value="${orderInformation.brokerDestination}">
 			</div>
 
 			<div class="form-group">
-				<input id="topic" type="checkbox" name="topic" th:value="topic" th:field="*{topicSelected}">
-				<label class="form-check-label" for="topic">Topic</label> 
-				<input id="queue" type="checkbox" name="queue" th:value="queue" th:field="*{queueSelected}">
-				<label class="form-check-label" for="queue">Queue</label>
+				<input id="topic" type="checkbox" name="topic" th:value="topic"
+					th:field="*{topicSelected}"> <label
+					class="form-check-label" for="topic"
+					th:text="#{broker.topic.label}"></label> <input id="queue"
+					type="checkbox" name="queue" th:value="queue"
+					th:field="*{queueSelected}"> <label
+					class="form-check-label" for="queue"
+					th:text="#{broker.queue.label}"></label>
 			</div>
 
 			<div class="form-group">
-				<label> Choose file</label> <input id="chosenXmlFile"
+				<label th:text="#{chose.file}"> Choose file</label> <input id="chosenXmlFile"
 					class="form-control mx-sm-3" type="file" name="file"
 					th:field="*{uploadedXmlFile}" accept="text/xml" required>
 			</div>
